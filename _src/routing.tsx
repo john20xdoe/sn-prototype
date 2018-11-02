@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Dimensions, Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { StackNavigator, TabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, StackNavigator } from 'react-navigation';
 
 import Account from './screens/Account';
-import Coach from './screens/Coach';
+import Home from './screens/Home';
 
 const screen = Dimensions.get('window');
 
-export const Tabs = TabNavigator({
-  Coach: {
-    screen: Coach,
+export const Tabs = createBottomTabNavigator({
+  Home: {
+    screen: Home,
     navigationOptions: {
-      tabBarLabel: 'Coach',
+      tabBarLabel: 'Home',
       tabBarIcon: ({ tintColor }) => (
         <Icon name='open-book' type='entypo' size={28} color={tintColor} />
       )
@@ -24,7 +24,7 @@ export const Tabs = TabNavigator({
       tabBarLabel: 'Account',
       tabBarIcon: ({ tintColor }) => (
         <Icon
-          name='ios-person-outline'
+          name='ios-information-circle'
           type='ionicon'
           size={28}
           color={tintColor}
