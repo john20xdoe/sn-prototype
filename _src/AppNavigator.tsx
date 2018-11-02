@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { Dimensions, Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from 'react-navigation';
 
+import { BOTTOM_TABS } from './constants/Layout';
 import Account from './screens/Account';
 import Home from './screens/Home';
 import Summary from './screens/Summary';
-
-const screen = Dimensions.get('window');
-const ICON_SIZE = 36;
+const ICON_SIZE = BOTTOM_TABS.iconSize;
 export default createBottomTabNavigator(
   {
     Home: {
@@ -61,7 +59,7 @@ export default createBottomTabNavigator(
       activeTintColor: 'tomato',
       inactiveTintColor: 'gray',
       style: {
-        height: 60
+        height: BOTTOM_TABS.height
       }
     }
   }
