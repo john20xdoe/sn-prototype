@@ -8,14 +8,19 @@ import Home from './screens/Home';
 import Summary from './screens/Summary';
 
 const screen = Dimensions.get('window');
-
+const ICON_SIZE = 36;
 export default createBottomTabNavigator(
   {
     Home: {
       screen: Home,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Icon name='ios-snow' type='ionicon' size={28} color={tintColor} />
+          <Icon
+            name='ios-snow'
+            type='ionicon'
+            size={ICON_SIZE}
+            color={tintColor}
+          />
         )
       }
     },
@@ -23,7 +28,12 @@ export default createBottomTabNavigator(
       screen: Summary,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
-          <Icon name='open-book' type='entypo' size={28} color={tintColor} />
+          <Icon
+            name='open-book'
+            type='entypo'
+            size={ICON_SIZE}
+            color={tintColor}
+          />
         )
       }
     },
@@ -34,7 +44,7 @@ export default createBottomTabNavigator(
           <Icon
             name='account-circle'
             type='materialcommunityicon'
-            size={28}
+            size={ICON_SIZE}
             color={tintColor}
           />
         )
@@ -49,7 +59,10 @@ export default createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: 'tomato',
-      inactiveTintColor: 'gray'
+      inactiveTintColor: 'gray',
+      style: {
+        height: 60
+      }
     }
   }
 );
