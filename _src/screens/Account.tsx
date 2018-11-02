@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class Account extends Component {
-  render() {
+  public render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Account</Text>
@@ -14,13 +14,13 @@ export default class Account extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
   },
   title: {
     fontSize: 20,
-    textAlign: "center",
+    textAlign: 'center',
     margin: 10
   }
 });
