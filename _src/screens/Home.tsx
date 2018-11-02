@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { FlatList, StatusBar, StyleSheet, Text, View } from "react-native";
-import { Props } from "../App";
-import Exercise from "./Exercise";
+import React, { Component } from 'react';
+import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { Props } from '../App';
+import Step from './Step';
 
 export default class HomeScreen extends Component {
   constructor(props: Props) {
@@ -10,41 +11,42 @@ export default class HomeScreen extends Component {
       books: [
         {
           id: 1,
-          title: "Harry Potter and the Goblet of Fire",
-          author: "J. K. Rowling",
-          thumbnail: "https://covers.openlibrary.org/w/id/7984916-M.jpg"
+          title: 'Harry Potter and the Goblet of Fire',
+          author: 'J. K. Rowling',
+          thumbnail: 'https://covers.openlibrary.org/w/id/7984916-M.jpg'
         },
         {
           id: 2,
-          title: "The Hobbit",
-          author: "J. R. R. Tolkien",
-          thumbnail: "https://covers.openlibrary.org/w/id/6979861-M.jpg"
+          title: 'The Hobbit',
+          author: 'J. R. R. Tolkien',
+          thumbnail: 'https://covers.openlibrary.org/w/id/6979861-M.jpg'
         },
         {
           id: 3,
-          title: "1984",
-          author: "George Orwell",
-          thumbnail: "https://covers.openlibrary.org/w/id/7222246-M.jpg"
+          title: '1984',
+          author: 'George Orwell',
+          thumbnail: 'https://covers.openlibrary.org/w/id/7222246-M.jpg'
         }
       ]
     };
   }
 
   public renderItem = ({ item }) => (
-    <Exercise
+    <Step
       id={item.id}
       title={item.title}
       author={item.author}
       thumbnail={item.thumbnail}
     />
-  );
+  )
 
   public keyExtractor = (item, index) => item.id;
 
   public render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
+        <StatusBar barStyle='light-content' />
         <FlatList
           data={this.state.books}
           keyExtractor={this.keyExtractor}
@@ -57,6 +59,6 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5FCFF"
+    backgroundColor: '#F5FCFF'
   }
 });

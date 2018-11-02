@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class Exercises extends Component {
+export default class Summary extends Component {
   public render() {
     return (
+      // Display the compiled notes as read-only narrative
       <View style={styles.container}>
-        <Text style={styles.title}>Exercise List</Text>
+        <Text style={styles.title}>Summary</Text>
       </View>
     );
   }
