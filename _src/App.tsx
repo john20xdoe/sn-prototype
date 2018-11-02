@@ -1,9 +1,8 @@
-import { AppLoading, Asset } from 'expo';
 import React from 'react';
 import { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import BottomNavigation from './AppNavigator';
+import AppNavigatorBottom from './AppNavigatorBottom';
 export interface Props {
   skipLoadingScreen: boolean;
 }
@@ -22,7 +21,7 @@ export default class App extends Component<Props, OwnState> {
   public render() {
     return (
       <View style={styles.container}>
-        <BottomNavigation />
+        <AppNavigatorBottom />
       </View>
     );
   }
