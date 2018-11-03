@@ -2,7 +2,8 @@ import React from 'react';
 import { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import { AppBottomTab } from './AppNavigator';
+import { RootStack } from './AppNavigator';
+import Colors from './constants/Colors';
 // import {RootNavigator} from './AppNavigator';
 export interface OwnProps {
   navigation?: any;
@@ -22,10 +23,16 @@ export default class App extends Component<Props, OwnState> {
     SplashScreen.hide();
   }
 
+  public componentDidCatch(error: any) {
+    alert('Error:' + error);
+    SplashScreen.hide();
+  }
+
   public render() {
     return (
       <View style={styles.container}>
-        <AppBottomTab />
+        {/* <AppBottomTab /> */}
+        <RootStack />
       </View>
     );
   }
@@ -34,6 +41,6 @@ export default class App extends Component<Props, OwnState> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF'
+    backgroundColor: Colors.Background
   }
 });

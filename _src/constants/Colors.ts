@@ -1,5 +1,8 @@
 export default Object.freeze({
   Primary: 'tomato',
   Accent: 'gold',
-  Background: '#F5FCFF'
+  Disabled: 'gray',
+  DisabledHarder: 'lightgray',
+  Background: '#F5FCFF',
+  BackgroundWhite: '#efefef'
 });

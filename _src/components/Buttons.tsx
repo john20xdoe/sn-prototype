@@ -10,7 +10,7 @@ import {
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
 import Colors from '../constants/Colors';
-import GlobalStyles from '../constants/GlobalStyles';
+import { GlobalStyles } from '../constants/GlobalStyles';
 export interface ButtonProps {
   onPress: (e: any) => void;
   tintColor?: string;
@@ -25,6 +25,19 @@ export const BackButton: React.SFC<ButtonProps> = ({
     <Touchable onPress={onPress} style={styles.touchable}>
       <View style={styles.headerButton}>
         <Icon name='md-arrow-back' type='ionicon' size={28} color={tintColor} />
+      </View>
+    </Touchable>
+  ) : null;
+
+export const AboutButton: React.SFC<ButtonProps> = ({
+  onPress,
+  tintColor,
+  visible
+}) =>
+  visible ? (
+    <Touchable onPress={onPress} style={styles.touchable}>
+      <View style={styles.headerButton}>
+        <Icon name='info' type='entypo' size={28} color={tintColor} />
       </View>
     </Touchable>
   ) : null;

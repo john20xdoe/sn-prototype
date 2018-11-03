@@ -1,7 +1,13 @@
 import React from 'react';
 
 import { Icon } from 'react-native-elements';
-import { createBottomTabNavigator } from 'react-navigation';
+import {
+  createBottomTabNavigator,
+  createStackNavigator
+} from 'react-navigation';
+import { AboutButton } from './components/Buttons';
+import Colors from './constants/Colors';
+import { GlobalStyles } from './constants/GlobalStyles';
 import { BOTTOM_TABS } from './constants/Layout';
 import AboutScreen from './screens/About';
 import Account from './screens/Account';
@@ -58,32 +64,51 @@ export const AppBottomTab = createBottomTabNavigator(
           />
         )
       }
-    },
-    About: {
-      screen: AboutScreen,
-      navigationOptions: {
-        tabBarIcon: ({ tintColor }) => (
-          <Icon
-            name='info-with-circle'
-            type='entypo'
-            size={ICON_SIZE}
-            color={tintColor}
-          />
-        )
-      }
     }
   },
   {
     navigationOptions: ({ navigation }) => ({
-      header: 'Snowflake - ' + navigation.state.routeName.toUpperCase(),
       tabBarLabel: navigation.state.routeName.toUpperCase(),
       gesturesEnabled: false
     }),
     tabBarOptions: {
-      activeTintColor: 'tomato',
-      inactiveTintColor: 'gray',
+      activeTintColor: Colors.Primary,
+      inactiveTintColor: Colors.Disabled,
       style: { height: BOTTOM_TABS.height }
     },
     initialRouteName: 'Home'
+  }
+);
+// About: {
+//   screen: AboutScreen,
+//   navigationOptions: {
+//     tabBarIcon: ({ tintColor }) => (
+//       <Icon
+//         name='info-with-circle'
+//         type='entypo'
+//         size={ICON_SIZE}
+//         color={tintColor}
+//       />
+//     )
+//   }
+// }
+
+export const RootStack = createStackNavigator(
+  { Home: { screen: AppBottomTab }, About: { screen: AboutScreen } },
+  {
+    mode: 'modal',
+    headerMode: 'screen',
+    navigationOptions: ({ navigation }) => ({
+      headerTitle: 'Snowflake - ' + navigation.state.routeName,
+      headerTintColor: '#fff',
+      headerStyle: GlobalStyles.flatHeaderNavigation,
+      headerTitleStyle: GlobalStyles.headerTitleStyle,
+      headerRight: (
+        <AboutButton
+          onPress={() => navigation.navigate('About')}
+          tintColor='gold'
+        />
+      )
+    })
   }
 );

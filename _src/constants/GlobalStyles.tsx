@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import Colors from './Colors';
 
-export default {
+export const GlobalStyles = {
   flexWrapper: {
     flex: 1
   },
@@ -12,10 +12,10 @@ export default {
   },
   headerTitleStyle: {
     fontSize: 19,
-    color: 'rgb(1, 99, 72)',
-    textAlign: 'center',
-    alignSelf: 'center',
-    flex: 1
+    backgroundColor: Colors.Primary
+    // textAlign: 'center',
+    // alignSelf: 'center',
+    // flex: 1
   },
   elevationShadow: {
     shadowColor: 'rgba(0, 0, 0, 0.1)',

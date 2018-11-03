@@ -1,5 +1,11 @@
 import React from 'react';
-import { LayoutAnimation, StyleSheet, Text, View } from 'react-native';
+import {
+  LayoutAnimation,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
 import { AppBottomTab } from '../AppNavigator';
@@ -10,14 +16,16 @@ import { BackButton } from './Buttons';
 const Page = (Comp: any) => ({ children, ...props }: any) => {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      {/* <View style={styles.header}>
         <BackButton
           tintColor={Colors.Primary}
           onPress={() => props.navigation.goBack()}
           visible={props.hasParent}
         />
+      </View> */}
+      <View style={styles.content}>
+        <Comp {...props}>{children}</Comp>
       </View>
-      <Comp {...props}>{children}</Comp>
       {/* <View>
         <AppBottomTab />
       </View> */}
@@ -25,7 +33,7 @@ const Page = (Comp: any) => ({ children, ...props }: any) => {
   );
 };
 
-export const PageView = Page(View);
+export const PageView = Page(ScrollView);
 
 const styles = StyleSheet.create({
   container: {
@@ -34,6 +42,11 @@ const styles = StyleSheet.create({
     paddingTop: 5
   },
   header: {
-    height: PAGES.headerHeight
+    height: PAGES.headerHeight,
+    zIndex: 5
+  },
+  content: {
+    backgroundColor: Colors.BackgroundWhite,
+    flex: 1
   }
 });
