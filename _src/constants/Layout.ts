@@ -4,5 +4,6 @@ export const BOTTOM_TABS = Object.freeze({
 });
 
 export const PAGES = Object.freeze({
+  headerHeight: 50,
   iconSize: 90
 });

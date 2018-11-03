@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { LayoutAnimation, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
 import { AppBottomTab } from '../AppNavigator';
 import Colors from '../constants/Colors';
+import { PAGES } from '../constants/Layout';
 import { BackButton } from './Buttons';
 
 const Page = (Comp: any) => ({ children, ...props }: any) => {
@@ -13,6 +14,7 @@ const Page = (Comp: any) => ({ children, ...props }: any) => {
         <BackButton
           tintColor={Colors.Primary}
           onPress={() => props.navigation.goBack()}
+          visible={props.hasParent}
         />
       </View>
       <Comp {...props}>{children}</Comp>
@@ -28,9 +30,10 @@ export const PageView = Page(View);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.Background
+    backgroundColor: Colors.Background,
+    paddingTop: 5
   },
   header: {
-    height: 19
+    height: PAGES.headerHeight
   }
 });

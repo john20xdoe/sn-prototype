@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { OwnProps } from '../App';
+import { PageView } from '../components/Page';
 import Step from '../components/Step';
 
 export default class StepsScreen extends Component {
@@ -44,15 +45,17 @@ export default class StepsScreen extends Component {
 
   public render() {
     return (
-      <View style={styles.container}>
-        <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
-        <StatusBar barStyle='light-content' />
-        <FlatList
-          data={this.state.books}
-          keyExtractor={this.keyExtractor}
-          renderItem={this.renderItem}
-        />
-      </View>
+      <PageView>
+        <View>
+          <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
+          <StatusBar barStyle='light-content' />
+          <FlatList
+            data={this.state.books}
+            keyExtractor={this.keyExtractor}
+            renderItem={this.renderItem}
+          />
+        </View>
+      </PageView>
     );
   }
 }

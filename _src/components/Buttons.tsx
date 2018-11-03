@@ -14,14 +14,20 @@ import GlobalStyles from '../constants/GlobalStyles';
 export interface ButtonProps {
   onPress: (e: any) => void;
   tintColor?: string;
+  visible?: boolean;
 }
-export const BackButton: React.SFC<ButtonProps> = ({ onPress, tintColor }) => (
-  <Touchable onPress={onPress} style={styles.touchable}>
-    <View style={styles.headerButton}>
-      <Icon name='md-arrow-back' type='ionicon' size={28} color={tintColor} />
-    </View>
-  </Touchable>
-);
+export const BackButton: React.SFC<ButtonProps> = ({
+  onPress,
+  tintColor,
+  visible
+}) =>
+  visible ? (
+    <Touchable onPress={onPress} style={styles.touchable}>
+      <View style={styles.headerButton}>
+        <Icon name='md-arrow-back' type='ionicon' size={28} color={tintColor} />
+      </View>
+    </Touchable>
+  ) : null;
 
 export const styles = StyleSheet.create({
   touchable: {
