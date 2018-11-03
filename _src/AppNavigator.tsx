@@ -1,14 +1,15 @@
 import React from 'react';
 
+import { View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import {
   createBottomTabNavigator,
   createStackNavigator
 } from 'react-navigation';
-import { AboutButton } from './components/Buttons';
+import { AboutButton, styles as ButtonStyles } from './components/Buttons';
 import Colors from './constants/Colors';
 import { GlobalStyles } from './constants/GlobalStyles';
-import { BOTTOM_TABS } from './constants/Layout';
+import { BOTTOM_TABS, HEADER } from './constants/Layout';
 import AboutScreen from './screens/About';
 import Account from './screens/Account';
 import HomeScreen from './screens/Home';
@@ -23,8 +24,8 @@ export const AppBottomTab = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
-            name='ios-snow'
-            type='ionicon'
+            name='history'
+            type='fontawesome'
             size={ICON_SIZE}
             color={tintColor}
           />
@@ -79,34 +80,38 @@ export const AppBottomTab = createBottomTabNavigator(
     initialRouteName: 'Home'
   }
 );
-// About: {
-//   screen: AboutScreen,
-//   navigationOptions: {
-//     tabBarIcon: ({ tintColor }) => (
-//       <Icon
-//         name='info-with-circle'
-//         type='entypo'
-//         size={ICON_SIZE}
-//         color={tintColor}
-//       />
-//     )
-//   }
-// }
 
 export const RootStack = createStackNavigator(
-  { Home: { screen: AppBottomTab }, About: { screen: AboutScreen } },
+  {
+    Home: { screen: AppBottomTab },
+    About: { screen: AboutScreen, navigationOptions: { headerRight: null } }
+  },
   {
     mode: 'modal',
     headerMode: 'screen',
     navigationOptions: ({ navigation }) => ({
-      headerTitle: 'Snowflake - ' + navigation.state.routeName,
+      headerTitle: 'Snowflake Coach',
       headerTintColor: '#fff',
       headerStyle: GlobalStyles.flatHeaderNavigation,
       headerTitleStyle: GlobalStyles.headerTitleStyle,
+      headerLeft: (
+        // <BackButton
+        //   tintColor={Colors.Primary}
+        //   onPress={() => navigation.goBack(null)}
+        // />
+        <View style={[ButtonStyles.headerButton]}>
+          <Icon
+            name='ios-snow'
+            type='ionicon'
+            size={HEADER.iconSize}
+            color={Colors.Primary}
+          />
+        </View>
+      ),
       headerRight: (
         <AboutButton
           onPress={() => navigation.navigate('About')}
-          tintColor='gold'
+          tintColor={Colors.Primary}
         />
       )
     })

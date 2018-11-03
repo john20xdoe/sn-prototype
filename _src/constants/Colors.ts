@@ -4,5 +4,5 @@ export default Object.freeze({
   Disabled: 'gray',
   DisabledHarder: 'lightgray',
   Background: '#F5FCFF',
-  BackgroundWhite: '#efefef'
+  BackgroundGray: '#efefef'
 });
