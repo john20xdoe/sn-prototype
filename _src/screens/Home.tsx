@@ -1,57 +1,31 @@
 import React, { Component } from 'react';
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
+import Touchable from 'react-native-platform-touchable';
 import { Props } from '../App';
-import Step from './Step';
+import AppNavigatorBottom from '../AppNavigatorBottom';
 
 export default class HomeScreen extends Component {
   constructor(props: Props) {
     super(props);
-    this.state = {
-      books: [
-        {
-          id: 1,
-          title: 'Harry Potter and the Goblet of Fire',
-          author: 'J. K. Rowling',
-          thumbnail: 'https://covers.openlibrary.org/w/id/7984916-M.jpg'
-        },
-        {
-          id: 2,
-          title: 'The Hobbit',
-          author: 'J. R. R. Tolkien',
-          thumbnail: 'https://covers.openlibrary.org/w/id/6979861-M.jpg'
-        },
-        {
-          id: 3,
-          title: '1984',
-          author: 'George Orwell',
-          thumbnail: 'https://covers.openlibrary.org/w/id/7222246-M.jpg'
-        }
-      ]
-    };
   }
-
-  public renderItem = ({ item }) => (
-    <Step
-      id={item.id}
-      title={item.title}
-      author={item.author}
-      thumbnail={item.thumbnail}
-    />
-  )
-
-  public keyExtractor = (item, index) => item.id;
 
   public render() {
     return (
       <View style={styles.container}>
-        <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
-        <StatusBar barStyle='light-content' />
-        <FlatList
-          data={this.state.books}
-          keyExtractor={this.keyExtractor}
-          renderItem={this.renderItem}
-        />
+        <View>
+          <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
+          <Text>Recently...</Text>
+          <Touchable onPress={() => alert('Continue')}>
+            <Text>Continue</Text>
+          </Touchable>
+          <Touchable onPress={() => alert('Start')}>
+            <Text>Start</Text>
+          </Touchable>
+        </View>
+        <View>
+          <AppNavigatorBottom />
+        </View>
       </View>
     );
   }
