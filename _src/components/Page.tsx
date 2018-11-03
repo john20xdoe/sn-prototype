@@ -12,13 +12,13 @@ const Page = (Comp: any) => ({ children, ...props }: any) => {
       <View style={styles.header}>
         <BackButton
           tintColor={Colors.Primary}
-          onPress={() => props.navigation.goBack(null)}
+          onPress={() => props.navigation.goBack()}
         />
       </View>
       <Comp {...props}>{children}</Comp>
-      <View>
+      {/* <View>
         <AppBottomTab />
-      </View>
+      </View> */}
     </View>
   );
 };

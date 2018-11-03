@@ -3,10 +3,9 @@ import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
 import { OwnProps } from '../App';
-import { AppBottomTab } from '../AppNavigator';
 import { PageView } from '../components/Page';
 
-export default class HomeScreen extends Component {
+export default class Home extends Component {
   constructor(props: OwnProps) {
     super(props);
   }
@@ -24,7 +23,6 @@ export default class HomeScreen extends Component {
             <Text>Start</Text>
           </Touchable>
         </View>
-        <View>{/* <AppBottomTab /> */}</View>
       </PageView>
     );
   }
