@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
-import { Props } from '../App';
+import { OwnProps } from '../App';
+import { PAGES } from '../constants/Layout';
 
-export default class AboutScreen extends Component {
-  constructor(props: Props) {
+export default class AboutScreen extends Component<OwnProps> {
+  constructor(props: OwnProps) {
     super(props);
   }
 
@@ -17,9 +18,9 @@ export default class AboutScreen extends Component {
     return (
       <View style={styles.container}>
         <Icon
-          name='info-with-circle'
+          name='info'
           type='entypo'
-          size={120}
+          size={PAGES.iconSize}
           color={'tomato'}
         />
 
@@ -27,7 +28,7 @@ export default class AboutScreen extends Component {
         <Text>Credits to </Text>
         <Text>Enter about text</Text>
         <Touchable style={styles.roundedButton} onPress={() => this.goHome()}>
-          <Text>Start</Text>
+          <Text>Start Now</Text>
         </Touchable>
       </View>
     );
@@ -41,9 +42,9 @@ const styles = StyleSheet.create({
   roundedButton: {
     alignSelf: 'center',
     marginBottom: 2,
-    backgroundColor: 'tomato',
-    borderRadius: 28,
-    width: 235,
+    backgroundColor: 'gold',
+    borderRadius: 5,
+    width: 135,
     height: 50,
     flexDirection: 'row',
     justifyContent: 'center',

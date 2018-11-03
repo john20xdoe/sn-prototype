@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { Props } from '../App';
-import Step from './Step';
+import { OwnProps } from '../App';
+import Step from '../components/Step';
 
 export default class StepsScreen extends Component {
-  constructor(props: Props) {
+  constructor(props: OwnProps) {
     super(props);
     this.state = {
       books: [

@@ -2,8 +2,12 @@ import React from 'react';
 import { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import AppNavigatorBottom from './AppNavigatorBottom';
-export interface Props {
+import { AppBottomTab } from './AppNavigator';
+// import {RootNavigator} from './AppNavigator';
+export interface OwnProps {
+  navigation?: any;
+}
+interface Props extends OwnProps {
   skipLoadingScreen: boolean;
 }
 interface OwnState {
@@ -21,7 +25,7 @@ export default class App extends Component<Props, OwnState> {
   public render() {
     return (
       <View style={styles.container}>
-        <AppNavigatorBottom />
+        <AppBottomTab />
       </View>
     );
   }

@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
-import { Props } from '../App';
-import AppNavigatorBottom from '../AppNavigatorBottom';
+import { OwnProps } from '../App';
+import { AppBottomTab } from '../AppNavigator';
+import { PageView } from '../components/Page';
 
 export default class HomeScreen extends Component {
-  constructor(props: Props) {
+  constructor(props: OwnProps) {
     super(props);
   }
 
   public render() {
     return (
-      <View style={styles.container}>
+      <PageView>
         <View>
           <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
           <Text>Recently...</Text>
@@ -23,10 +24,8 @@ export default class HomeScreen extends Component {
             <Text>Start</Text>
           </Touchable>
         </View>
-        <View>
-          <AppNavigatorBottom />
-        </View>
-      </View>
+        <View>{/* <AppBottomTab /> */}</View>
+      </PageView>
     );
   }
 }
