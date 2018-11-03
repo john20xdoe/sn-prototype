@@ -5,15 +5,15 @@ import { createBottomTabNavigator } from 'react-navigation';
 import { BOTTOM_TABS } from './constants/Layout';
 import AboutScreen from './screens/About';
 import Account from './screens/Account';
-import Home from './screens/Home';
+import HomeScreen from './screens/Home';
 import StepsScreen from './screens/Steps';
-import Summary from './screens/Summary';
+import SummaryScreen from './screens/Summary';
 
 const ICON_SIZE = BOTTOM_TABS.iconSize;
 export const AppBottomTab = createBottomTabNavigator(
   {
     Home: {
-      screen: Home,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon
@@ -34,7 +34,7 @@ export const AppBottomTab = createBottomTabNavigator(
       }
     },
     Summary: {
-      screen: Summary,
+      screen: SummaryScreen,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon

@@ -6,7 +6,7 @@ import { PageView } from '../components/Page';
 import Colors from '../constants/Colors';
 import { PAGES } from '../constants/Layout';
 
-export default class Summary extends Component {
+export default class SummaryScreen extends Component {
   public render() {
     // Display the compiled notes as read-only narrative
     return (

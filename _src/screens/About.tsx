@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 import Touchable from 'react-native-platform-touchable';
 import { OwnProps } from '../App';
+import { PageView } from '../components/Page';
 import { PAGES } from '../constants/Layout';
 
 export default class AboutScreen extends Component<OwnProps> {
@@ -16,21 +17,23 @@ export default class AboutScreen extends Component<OwnProps> {
 
   public render() {
     return (
-      <View style={styles.container}>
-        <Icon
-          name='info'
-          type='entypo'
-          size={PAGES.iconSize}
-          color={'tomato'}
-        />
+      <PageView>
+        <View style={styles.container}>
+          <Icon
+            name='info'
+            type='entypo'
+            size={PAGES.iconSize}
+            color={'tomato'}
+          />
 
-        <Text>About</Text>
-        <Text>Credits to </Text>
-        <Text>Enter about text</Text>
-        <Touchable style={styles.roundedButton} onPress={() => this.goHome()}>
-          <Text>Start Now</Text>
-        </Touchable>
-      </View>
+          <Text>About</Text>
+          <Text>Credits to </Text>
+          <Text>Enter about text</Text>
+          <Touchable style={styles.roundedButton} onPress={() => this.goHome()}>
+            <Text>Start Now</Text>
+          </Touchable>
+        </View>
+      </PageView>
     );
   }
 }

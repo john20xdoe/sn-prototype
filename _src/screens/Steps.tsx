@@ -47,7 +47,7 @@ export default class StepsScreen extends Component {
     return (
       <PageView>
         <View>
-          <Icon name='ios-snow' type='ionicon' size={120} color={'tomato'} />
+          <Icon name='list' type='entypo' size={120} color={'tomato'} />
           <StatusBar barStyle='light-content' />
           <FlatList
             data={this.state.books}
