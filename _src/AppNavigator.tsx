@@ -94,20 +94,20 @@ export const RootStack = createStackNavigator(
       headerTintColor: '#fff',
       headerStyle: GlobalStyles.flatHeaderNavigation,
       headerTitleStyle: GlobalStyles.headerTitleStyle,
-      headerLeft: (
+      headerLeft:
         // <BackButton
         //   tintColor={Colors.Primary}
         //   onPress={() => navigation.goBack(null)}
         // />
-        <View style={[ButtonStyles.headerButton]}>
-          <Icon
-            name='ios-snow'
-            type='ionicon'
-            size={HEADER.iconSize}
-            color={Colors.Primary}
-          />
-        </View>
-      ),
+        // <View style={[ButtonStyles.headerButton]}>
+        //   <Icon
+        //     name='ios-snow'
+        //     type='ionicon'
+        //     size={HEADER.iconSize}
+        //     color={Colors.Primary}
+        //   />
+        // </View>
+        null,
       headerRight: (
         <AboutButton
           onPress={() => navigation.navigate('About')}

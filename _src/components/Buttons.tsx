@@ -50,7 +50,7 @@ export const styles = StyleSheet.create({
   headerButton: {
     flex: 1,
     flexDirection: 'row',
-    padding: 8,
+    padding: 6,
     paddingHorizontal: 16,
     alignSelf: 'center',
     borderColor: Colors.Primary,
@@ -66,7 +66,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    ...GlobalStyles.subtleShadow
+    ...StyleSheet.flatten(GlobalStyles.subtleShadow)
   },
   roundedButtonText: {
     color: '#fff',

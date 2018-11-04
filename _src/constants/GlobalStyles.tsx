@@ -1,5 +1,6 @@
 import { Platform, StyleSheet } from 'react-native';
 import Colors from './Colors';
+import { HEADER } from './Layout';
 
 export const GlobalStyles = StyleSheet.create({
   flexWrapper: {
@@ -12,10 +13,11 @@ export const GlobalStyles = StyleSheet.create({
   },
   headerTitleStyle: {
     flex: 1,
-    fontSize: 22,
+    fontSize: HEADER.fontSize,
+    fontWeight: 'normal',
     color: Colors.Primary,
     alignSelf: 'center',
-    textAlign: 'center'
+    textAlign: 'left'
   },
   elevationShadow: {
     shadowColor: 'rgba(0, 0, 0, 0.1)',
