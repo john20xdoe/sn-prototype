@@ -1,9 +1,9 @@
-import React from 'react';
-import { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
-import SplashScreen from 'react-native-splash-screen';
-import { RootStack } from './AppNavigator';
-import Colors from './constants/Colors';
+import React from "react";
+import { Component } from "react";
+import { StyleSheet, View } from "react-native";
+
+import { RootStack } from "./AppNavigator";
+import Colors from "./constants/Colors";
 // import {RootNavigator} from './AppNavigator';
 export interface OwnProps {
   navigation?: any;
@@ -20,12 +20,12 @@ export default class App extends Component<Props, OwnState> {
   };
 
   public componentDidMount() {
-    SplashScreen.hide();
+    // TODO add spllash screen?
   }
 
   public componentDidCatch(error: any) {
-    alert('Error:' + error);
-    SplashScreen.hide();
+    alert("Error:" + error);
+    // TODO add splash screen
   }
 
   public render() {

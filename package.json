@@ -1,18 +1,21 @@
 {
-  "name": "SnowFlakeCoachRN",
-  "version": "0.0.1",
+  "name": "snowflakecoach",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
+    "rn": "react-native",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start:android": "npm run rn -- run-android",
+    "test": "jest",
+    "bundle:android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android": "npm run bundle:android && npm run start:android"
   },
   "dependencies": {
     "lodash": "^4.17.10",
-    "react": "16.6.0-alpha.8af6728",
-    "react-native": "^0.57.4",
+    "react": "^16.6.3",
+    "react-native": "^0.58.6",
     "react-native-elements": "^0.19.1",
     "react-native-platform-touchable": "^1.1.1",
-    "react-native-splash-screen": "^3.1.1",
     "react-native-vector-icons": "^6.0.2",
     "react-navigation": "^2.18.2",
     "tslib": "^1.9.0"
